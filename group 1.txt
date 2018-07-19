@@ -1,0 +1,42 @@
+package nege;
+import java.util.Scanner;// Scanner is in the java.util package
+
+public class Nege 
+{
+  public static void main(String[] args) 
+    {
+           int negative=0,postive=0,total=0,count=0;   //initialisation of int values
+           float average=0;                            //initialisation of a float value
+           //Prompt the user to enter values and if the user enters zero the program should break and display results
+           System.out.println("Enter an int value, the program exits if the input is 0:");
+          
+           // Create a Scanner object
+           Scanner input=new Scanner(System.in); //scanner which is used from console input, System.in means standard input device
+                                                 //in other words it allows to input values from the keyboard
+     for(int x=1;x>=1;x++)          // allows the repeat the loop many times
+               {
+                int values=input.nextInt(); //gets int inputs and stores them in values
+                    if(values<0)  //checks if the value is less than zero and updates the negative by adding 1
+                       negative++;
+                    if(values>0) //checks if the value is greater than zero and updates the postive by adding 1
+                       postive++;
+                    if(values==0) // checks if the value enterd is equal to zero and if its true it breaks and exits the loop
+                       break;     // 
+                count=negative+postive;    //count holds the total number of both postive and negative int digits
+                                           //exculding zero
+                //compute the total of all values endtered
+                total=total+values;     
+            
+                average= (float)total/count; //typecasting which means changing the values of int to float 
+                                         //because average is in float and when we live it right hand value in int  
+                                         //it will trauncte the value in other words the values on the right and the left must 
+                                          //be conpartable
+               }
+         //Display result
+        System.out.println("The number of postives is "+postive);
+        System.out.println("The number of negatives is "+negative);
+        System.out.println("The total is " +total);
+        System.out.println("The average is " +average);
+    }
+    
+}
